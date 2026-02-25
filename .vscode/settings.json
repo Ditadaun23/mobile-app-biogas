@@ -1,0 +1,13 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "javascriptreact": "javascriptreact",
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["tw`([^]*)", "(?:'|\"|)([^']*)(?:'|\"|`)"],  // tw`bg-red-500`
+    ["twrnc\\.create\\(([^)]*)\\)", "(?:'|\"|)([^']*)(?:'|\"|)"], // twrnc.create()
+    ["tw\\(([^)]*)\\)", "(?:'|\"|)([^']*)(?:'|\"|)"] // tw("bg-red-500")
+  ]
+}

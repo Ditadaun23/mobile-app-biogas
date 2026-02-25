@@ -1,0 +1,129 @@
+// {
+//   "expo": {
+//     "name": "Mobile-App-Biogas",
+//     "slug": "Mobile-App-Biogas",
+//     "version": "1.0.0",
+//     "orientation": "default",
+//     "icon": "./assets/logo_aplikasi.png",
+//     "userInterfaceStyle": "light",
+//     "newArchEnabled": true,
+//     "plugins": [
+//       [
+//         "expo-splash-screen",
+//         {
+//           "backgroundColor": "#253900",
+//           "image": "./assets/logo_aplikasi.png",
+//           "imageWidth": 180
+//         }
+//       ]
+//     ],
+//     "ios": {
+//       "supportsTablet": true
+//     },
+//     "android": {
+//       "adaptiveIcon": {
+//         "foregroundImage": "./assets/logo_aplikasi.png",
+//         "backgroundColor": "#253900",
+//       },  
+//       "edgeToEdgeEnabled": true,
+//       "package": "com.anonymous.MobileAppBiogas"
+//     },
+//     "web": {
+//       "favicon": "./assets/favicon.png"
+//     },
+//     "extra": {
+//       "eas": {
+//         "projectId": "06ed604c-7f5a-464c-93af-29ecd60f7aab"
+//       }
+//     }
+//   }
+// }
+
+// {
+//   "expo": {
+//     "name": "Mobile-App-Biogas",
+//     "slug": "Mobile-App-Biogas",
+//     "version": "1.0.0",
+//     "orientation": "default",
+//     "icon": "./assets/logo_aplikasi.png",
+//     "userInterfaceStyle": "light",
+//     "newArchEnabled": true,
+
+//     "splash": {
+//       "backgroundColor": "#253900",
+//       "image": "./assets/logo_aplikasi.png",
+//       "resizeMode": "contain"
+//     },
+
+//     "plugins": [
+//       [
+//         "expo-splash-screen",
+//         {
+//           "backgroundColor": "#253900",
+//           "image": "./assets/logo_aplikasi.png",
+//           "imageWidth": 180,
+//           "resizeMode": "contain"
+//         }
+//       ]
+//     ],
+
+//     "ios": {
+//       "supportsTablet": true
+//     },
+
+//     "android": {
+//       "adaptiveIcon": {
+//         "foregroundImage": "./assets/logo_aplikasi.png",
+//         "backgroundColor": "#253900"
+//       },
+      
+//       "package": "com.anonymous.MobileAppBiogas"
+//     },
+
+//     "web": {
+//       "favicon": "./assets/favicon.png"
+//     },
+
+//     "extra": {
+//       "eas": {
+//         "projectId": "06ed604c-7f5a-464c-93af-29ecd60f7aab"
+//       }
+//     }
+//   }
+// }
+{
+  "expo": {
+    "name": "SMARTBIOGAS",
+    "slug": "SMARTBIOGAS",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/Group 120.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#253900",
+          "image": "./assets/Group 120.png",
+          "imageWidth": 180,
+          "resizeMode": "contain"
+        }
+      ]
+    ],
+
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/Group 120.png",
+        "backgroundColor": "#253900"
+      },
+      "package": "com.anonymous.MobileAppBiogas"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "06ed604c-7f5a-464c-93af-29ecd60f7aab"
+      }
+    }
+  }
+}
