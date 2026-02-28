@@ -31,25 +31,31 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "API_URL": "https://dev.smartbiogas.com"
       }
     },
     "preview": {
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "API_URL": "https://preview.smartbiogas.com"
       }
     },
     "production": {
       "autoIncrement": true,
       "android": {
         "buildType": "app-bundle"
+      },
+      "env": {
+        "API_URL": "https://api.smartbiogas.com"
       }
     }
   },
   "submit": {
     "production": {}
-  },
-  "env": {
-    "API_URL": "https://dev.smartbiogas.com"
   }
 }
