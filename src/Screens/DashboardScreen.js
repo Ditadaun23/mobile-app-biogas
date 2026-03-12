@@ -108,13 +108,24 @@ const DashboardScreen = ({ navigation }) => {
   //sensor gas metana
   let kadarStatus,
     kadarCol = "#ff0000";
-  const kadar = sensor?.methane_IDE?.sensor_data?.methane_percent;
+  const kadar = sensor?.carbondioxide_IDE?.sensor_data?.carbon_percent;
 
-  if (kadar > 50) {
+  if (kadar < 30) {
     kadarStatus = "Optimal";
     kadarCol = "#3ace00";
   } else {
     kadarStatus = "Tidak Optimal";
+  }
+
+  let karbonStatus,
+    karbonCol = "#ff0000";
+  const karbon = sensor?.methane_IDE?.sensor_data?.carbon_percent;
+
+  if (karbon > 30) {
+    karbonStatus = "Optimal";
+    karbonCol = "#3ace00";
+  } else {
+    karbonStatus = "Tidak Optimal";
   }
 
   const MAX_GAS = 14;

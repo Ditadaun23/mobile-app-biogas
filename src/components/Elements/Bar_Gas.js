@@ -6,6 +6,17 @@ const BarGas = ({ terdeteksi, ch4, co2 }) => {
   const ch4Value = ch4?.toFixed(0) ?? "-";
   const co2Value = co2?.toFixed(0) ?? "-";
 
+  let karbonStatus,
+    karbonCol = "#ff0000";
+  const karbon = ch4Value;
+
+  if (karbon > 30) {
+    karbonStatus = "Optimal";
+    karbonCol = "#3ace00";
+  } else {
+    karbonStatus = "Tidak Optimal";
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.bungkus}>
@@ -26,6 +37,10 @@ const BarGas = ({ terdeteksi, ch4, co2 }) => {
             </Text>
           </View>
         </View>
+
+        <Text style={[styles.pressureValue, { color: karbonCol }]}>
+          {karbonStatus}
+        </Text>
 
         {/* CO2 Bar */}
         <View style={styles.barContainer}>
@@ -98,6 +113,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "baseline",
     justifyContent: "center",
+  },
+  pressureValue: {
+    fontSize: 13,
+    fontWeight: "bold",
+    // color: tekananCol,
+    textAlign: "center",
   },
   percentageText: {
     fontSize: 24,
