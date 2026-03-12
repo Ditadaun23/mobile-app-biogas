@@ -77,7 +77,7 @@ const COLLECTION = "ProduksiHarianUltrasonik";
 
 export async function getJarakData() {
   try {
-    const url = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/${COLLECTION}?pageSize=500&orderBy=waktuTS%20asc`;
+    const url = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/${COLLECTION}?pageSize=500&orderBy=waktuTS%20desc`;
 
     const res = await axios.get(url);
     if (!res.data.documents) return [];

@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Platform, Alert } from "react-native";
 import React, { useEffect, useRef } from "react";
+import Constants from "expo-constants";
 
 import AppNavigator from "./src/navigation/Navigator";
 import { AuthProvider, useAuth } from "./src/services/AuthContext";
@@ -140,6 +141,36 @@ function MainApp() {
 // =====================
 // REGISTER PUSH
 // =====================
+// async function registerForPushNotificationsAsync() {
+//   if (!Device.isDevice) {
+//     Alert.alert("Info", "Push notif hanya bisa di device fisik");
+//     return null;
+//   }
+
+//   const { status: existingStatus } = await Notifications.getPermissionsAsync();
+
+//   let finalStatus = existingStatus;
+//   if (existingStatus !== "granted") {
+//     const { status } = await Notifications.requestPermissionsAsync();
+//     finalStatus = status;
+//   }
+
+//   if (finalStatus !== "granted") {
+//     Alert.alert("Gagal", "Izin notifikasi ditolak");
+//     return null;
+//   }
+
+//   const token = (await Notifications.getExpoPushTokenAsync()).data;
+
+//   if (Platform.OS === "android") {
+//     await Notifications.setNotificationChannelAsync("default", {
+//       name: "default",
+//       importance: Notifications.AndroidImportance.MAX,
+//     });
+//   }
+
+//   return token;
+// }
 async function registerForPushNotificationsAsync() {
   if (!Device.isDevice) {
     Alert.alert("Info", "Push notif hanya bisa di device fisik");
@@ -159,7 +190,14 @@ async function registerForPushNotificationsAsync() {
     return null;
   }
 
-  const token = (await Notifications.getExpoPushTokenAsync()).data;
+  // 🔥 WAJIB pakai projectId
+  const token = (
+    await Notifications.getExpoPushTokenAsync({
+      projectId: Constants.expoConfig.extra.eas.projectId,
+    })
+  ).data;
+
+  console.log("EXPO TOKEN:", token);
 
   if (Platform.OS === "android") {
     await Notifications.setNotificationChannelAsync("default", {

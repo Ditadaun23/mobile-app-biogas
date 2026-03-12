@@ -70,40 +70,40 @@ const ControlScreen = () => {
   /* =============================
      TIMER (TIMESTAMP BASED)
   ============================= */
-  useEffect(() => {
-    let interval;
+  // useEffect(() => {
+  //   let interval;
 
-    if (status === "ON") {
-      interval = setInterval(() => {
-        const now = Date.now();
-        const elapsed = Math.floor((now - (startTimeRef.current || 0)) / 1000);
-        const remaining = MAX_TIME - elapsed;
+  //   if (status === "ON") {
+  //     interval = setInterval(() => {
+  //       const now = Date.now();
+  //       const elapsed = Math.floor((now - (startTimeRef.current || 0)) / 1000);
+  //       const remaining = MAX_TIME - elapsed;
 
-        if (remaining <= 0) {
-          update(motorRef, {
-            status: "OFF",
-            control: "AUTO",
-            startTime: null,
-            remaining: MAX_TIME,
-          });
+  //       if (remaining <= 0) {
+  //         update(motorRef, {
+  //           status: "OFF",
+  //           control: "AUTO",
+  //           startTime: null,
+  //           remaining: MAX_TIME,
+  //         });
 
-          clearInterval(interval);
-          setTime(MAX_TIME);
-        } else {
-          setTime(remaining);
+  //         clearInterval(interval);
+  //         setTime(MAX_TIME);
+  //       } else {
+  //         setTime(remaining);
 
-          // 🔥 update remaining ke database
-          update(motorRef, {
-            remaining: remaining,
-          });
-        }
-      }, 1000);
-    } else {
-      setTime(MAX_TIME);
-    }
+  //         // 🔥 update remaining ke database
+  //         update(motorRef, {
+  //           remaining: remaining,
+  //         });
+  //       }
+  //     }, 1000);
+  //   } else {
+  //     setTime(MAX_TIME);
+  //   }
 
-    return () => clearInterval(interval);
-  }, [status]);
+  //   return () => clearInterval(interval);
+  // }, [status]);
 
   /* =============================
      HANDLE REFRESH

@@ -108,7 +108,7 @@ const DashboardScreen = ({ navigation }) => {
   //sensor gas metana
   let kadarStatus,
     kadarCol = "#ff0000";
-  const kadar = sensor?.methane_IDE?.sensor_data?.biogas_percent;
+  const kadar = sensor?.methane_IDE?.sensor_data?.methane_percent;
 
   if (kadar > 50) {
     kadarStatus = "Optimal";
@@ -239,7 +239,7 @@ const DashboardScreen = ({ navigation }) => {
           <Text style={styles.cardTitle}>Kadar Gas</Text>
           <BarGas
             terdeteksi={false}
-            ch4={sensor?.methane_IDE?.sensor_data?.biogas_percent}
+            ch4={sensor?.methane_IDE?.sensor_data?.methane_percent}
             co2={sensor?.carbondioxide_IDE?.sensor_data?.carbon_percent}
           />
           <Text style={[styles.pressureValue, { color: kadarCol }]}>

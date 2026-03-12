@@ -45,12 +45,26 @@ const GrafikTekanan = () => {
   }, []);
 
   /* ================= SAFE DATA ================= */
-  const safeData = Array.isArray(data) ? data : [];
+  // const safeData = Array.isArray(data) ? data : [];
+  const safeData = Array.isArray(data)
+    ? [...data].sort((a, b) => new Date(a.waktuTS) - new Date(b.waktuTS))
+    : [];
 
   /* ================= FILTER DATA ================= */
+  // const filteredData = safeData.filter((item) => {
+  //   const itemDate = new Date(item.waktuTS);
+  //   return itemDate >= startDate && itemDate <= endDate;
+  // });
   const filteredData = safeData.filter((item) => {
     const itemDate = new Date(item.waktuTS);
-    return itemDate >= startDate && itemDate <= endDate;
+
+    const start = new Date(startDate);
+    start.setHours(0, 0, 0, 0);
+
+    const end = new Date(endDate);
+    end.setHours(23, 59, 59, 999);
+
+    return itemDate >= start && itemDate <= end;
   });
 
   /* ================= CHART DATA ================= */
